@@ -49,8 +49,12 @@ function Profile(){
 }
 
 function Button(){
+    function handleClick(){
+        alert('You clicked me')
+    }
+
     return (
-        <button>I"m a  button</button>
+        <button onClick={handleClick}>Click Me</button>
     );
 }
 
