@@ -10,6 +10,7 @@ function AboutPage(){
         <>
             <h1>About</h1>
             <p>Hello There <br /> How do you do?</p>
+            <img src="" className="avatar" alt="" />
         </>
     );
 }
