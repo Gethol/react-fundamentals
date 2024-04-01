@@ -49,15 +49,15 @@ function Profile(){
     );
 }
 
-function Button(){
-    const [count, setCount] = useState(0)
+function Button({count, onClick}){
+/*     const [count, setCount] = useState(0)
 
     function handleClick(){
         setCount(count +1)
-    }
+    } */
 
     return (
-        <button onClick={handleClick}>Clicked {count} times</button>
+        <button onClick={onClick}>Clicked {count} times</button>
     );
 }
 
@@ -72,12 +72,21 @@ function AboutPage(){
 }
 
 export default function MyApp(){
+    const [count, setCount] = useState(0)
+
+    function handleClick(){
+        setCount(count +1)
+    }
     return (
         <div>
             <h1>Welcome to my app</h1>
-            <h2>Counters that update Separately</h2>
+{/*             <h2>Counters that update Separately</h2>
             <Button />
-            <Button/>
+            <Button/> */}
+
+            <h2>Counters that share data</h2>
+            <Button count = {count} onClick ={handleClick} />
+            <Button count = {count} onClick ={handleClick} />
             <AboutPage/>
             <Profile />
             <ShoppingList />
