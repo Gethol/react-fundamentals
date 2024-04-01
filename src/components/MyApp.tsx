@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 const user = {
     name : "Hedy Lamarr",
@@ -49,12 +50,14 @@ function Profile(){
 }
 
 function Button(){
+    const [count, setCount] = useState(0)
+
     function handleClick(){
-        alert('You clicked me')
+        setCount(count +1)
     }
 
     return (
-        <button onClick={handleClick}>Click Me</button>
+        <button onClick={handleClick}>Clicked {count} times</button>
     );
 }
 
@@ -72,7 +75,9 @@ export default function MyApp(){
     return (
         <div>
             <h1>Welcome to my app</h1>
+            <h2>Counters that update Separately</h2>
             <Button />
+            <Button/>
             <AboutPage/>
             <Profile />
             <ShoppingList />
